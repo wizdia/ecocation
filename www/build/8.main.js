@@ -121,7 +121,7 @@ var Home = (function () {
         for (var _i = 0, _a = this.markers; _i < _a.length; _i++) {
             var item = _a[_i];
             var icon = {
-                url: "assets/img/marker.png",
+                url: "assets/img/marker2.png",
                 scaledSize: new google.maps.Size(20, 20),
                 origin: new google.maps.Point(0, 0),
                 anchor: new google.maps.Point(0, 0) // anchor

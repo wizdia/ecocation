@@ -76,7 +76,7 @@ export class Home {
     addMarkersToMap() {
         for(let item of this.markers) {
             var icon = {
-                url: "assets/img/marker.png", // url
+                url: "assets/img/marker2.png", // url
                 scaledSize: new google.maps.Size(20, 20), // scaled size
                 origin: new google.maps.Point(0,0), // origin
                 anchor: new google.maps.Point(0,0) // anchor
