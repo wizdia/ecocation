@@ -1,0 +1,23 @@
+
+<ion-content class="form-content" padding>
+  <div class="Loginpage">
+      <div class="formContainer">
+        <ion-label class="app-title"> <ion-icon name="paw"></ion-icon> Running DNA</ion-label>
+        <form  class="app-form" text-center>
+          <ion-list>
+            <ion-item no-padding no-lines>
+              <ion-label floating>이메일(Email)</ion-label>
+              <ion-input type="email"></ion-input>
+            </ion-item>
+            <ion-item no-padding no-lines>
+              <ion-label floating>비밀번호(Password)</ion-label>
+              <ion-input type="password"></ion-input>
+            </ion-item>
+          </ion-list>
+          <button ion-button block strong text-uppercase color="grayColor" (click)="goTo('Home')">로그인(login)</button>
+          <p class="bold" color="light" (click)="goTo('Register')">아직 가입 안하셨다고요? 가입GO~GO~</p>
+        </form>
+
+      </div>
+  </div>
+</ion-content>

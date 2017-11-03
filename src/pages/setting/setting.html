@@ -1,0 +1,46 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <button ion-button menuToggle start>
+      <ion-icon name="md-menu"></ion-icon>
+    </button>
+    <ion-title text-capitalize>설정</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+
+  <ion-item-group class="setting-list" margin-bottom>
+    <ion-item-divider no-padding color="light">계정</ion-item-divider>
+    <ion-item (click)="goTo('Profile')" no-padding>프로필 편집</ion-item>
+    <ion-item (click)="goTo('Login')" no-padding>로그아웃</ion-item>
+  </ion-item-group>
+
+  <ion-item-group class="setting-list" margin-bottom>
+    <ion-item-divider no-padding color="light">설정</ion-item-divider>
+    <ion-item no-padding>
+      <ion-label>위치 서비스</ion-label>
+      <ion-toggle></ion-toggle>
+    </ion-item>
+    <ion-item class="select-setting" no-padding>
+      <ion-label> 쪽지 받기</ion-label>
+      <ion-toggle></ion-toggle>
+    </ion-item>
+    <ion-item no-padding>
+      <ion-label>진동</ion-label>
+      <ion-toggle></ion-toggle>
+    </ion-item>
+  </ion-item-group>
+
+  <ion-item-group class="setting-list" margin-bottom>
+    <ion-item-divider no-padding color="light">음악</ion-item-divider>
+    <ion-item no-padding>
+      <ion-label>
+        랜덤재생
+      </ion-label>
+      <ion-checkbox (ionChange)="animateApp($event)"  checked="{{action}}" item-right></ion-checkbox>
+    </ion-item>
+  </ion-item-group>
+
+</ion-content>
