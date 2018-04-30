@@ -2,21 +2,36 @@
 <ion-content class="form-content" padding>
   <div class="Loginpage">
       <div class="formContainer">
-        <ion-label class="app-title"> <ion-icon name="paw"></ion-icon> Running DNA</ion-label>
+        <ion-img class="cent-img" width="250" height="130" src="../assets/img/secret_recipe_burned.png" ></ion-img>
         <form  class="app-form" text-center>
           <ion-list>
             <ion-item no-padding no-lines>
-              <ion-label floating>이메일(Email)</ion-label>
-              <ion-input type="email"></ion-input>
+              <ion-label floating>아이디</ion-label>
+              <ion-input type="id" [(ngModel)]="data.id" name="id"></ion-input>
             </ion-item>
             <ion-item no-padding no-lines>
-              <ion-label floating>비밀번호(Password)</ion-label>
-              <ion-input type="password"></ion-input>
+              <ion-label floating>비밀번호</ion-label>
+              <ion-input type="password" [(ngModel)]="data.password" name="password"></ion-input>
             </ion-item>
           </ion-list>
-          <button ion-button block strong text-uppercase color="grayColor" (click)="goTo('Home')">로그인(login)</button>
-          <p class="bold" color="light" (click)="goTo('Register')">아직 가입 안하셨다고요? 가입GO~GO~</p>
+          <button ion-button round strong class="bigButton-100" text-uppercase color="grayColor" (click)="submit()">로그인</button>
+          <p class="bold" color="light" >아직 가입 안하셨다고요? <a text-decoration="underline" (click)="goTo('Register')">가입하기</a></p>
+          <a>아이디 비밀번호 찾기</a>
         </form>
+        <div class="loginFooter" text-center>
+          <div class="option-sign" text-center margin-bottom>
+            <p>간편 로그인</p>
+            <ion-img style="width: 50px; height: 50px;" src="../../assets/icon/facebook.png"></ion-img>
+            <ion-img style="width: 50px; height: 50px;" src="../../assets/icon/kakaotalk.png"></ion-img>
+            <ion-img style="width: 50px; height: 50px;" src="../../assets/icon/naver.png"></ion-img>
+          </div>
+          <div>
+            <a>비회원으로 로그인하기</a>
+          </div>
+          <div margin-top>
+            <ion-img width="100" height="50" src="../assets/icon/top_logo5.jpg" style="align-items: center"></ion-img>
+          </div>
+        </div>
 
       </div>
   </div>

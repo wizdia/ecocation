@@ -1,0 +1,92 @@
+page-cosmeRecipes{
+  .text-on-bottom > .button-inner {
+    flex-direction: column;
+  }
+  .text-on-bottom{
+    width: 33.33%
+  }
+  .upper-menu{
+    height: 15%
+  }
+  .under-content{
+    height: 85%
+  }
+  $SIDEMENU_TOP: #95E0DB;
+  $SIDEMENU_BOTTOM: #6ACBD2;
+  $SIDEMENU_TRANSPARENCY: rgba(255,255,255,0.4);
+  .colored-bar{
+    background: -webkit-gradient(left top, $SIDEMENU_TOP, $SIDEMENU_BOTTOM);
+    background: -o-linear-gradient(bottom right, $SIDEMENU_TOP, $SIDEMENU_BOTTOM);
+    background: -moz-linear-gradient(bottom right, $SIDEMENU_TOP, $SIDEMENU_BOTTOM);
+    background: linear-gradient(to bottom right, $SIDEMENU_TOP, $SIDEMENU_BOTTOM);
+    height: 40px;
+    display:flex;
+
+    h3{
+      font-size: 1.8rem;
+      color:#fff;
+      font-weight: 500;
+      padding: 5px;
+      margin: 5px;
+    }
+    button{
+      color: whitesmoke;
+    }
+
+  }
+  /*.labelButton {
+    color:black;
+    font-weight: 500;
+    padding: 5px;
+    margin: 5px;
+  }*/
+
+  .selected {
+    color: whitesmoke;
+    font-size: 1.8rem;
+    padding: 5px;
+    margin: 5px;
+    background-color: #95E0DB;
+    font-weight: bold;
+  }
+  .unselected{
+    color: OldLace;
+    font-size: 1.8rem;
+    padding: 5px;
+    margin: 5px;
+    background-color: #e0e0e0 ;
+  }
+
+  .offbutton {
+    color: OldLace;
+    font-size: 1.8rem;
+    padding: 5px;
+    margin: 5px;
+    background-color: #e0e0e0 ;
+  }
+
+  .onbutton {
+    color: whitesmoke;
+    font-size: 1.8rem;
+    padding: 5px;
+    margin: 5px;
+    background-color: #95E0DB;
+    font-weight: bold;
+  }
+
+  .content-text{
+    font-size: 1.8rem;
+    color:#7F7F7F;
+    font-weight: 500;
+    padding: 1px;
+    margin: 1px;
+  }
+  .title-text{
+    font-size: 2.0rem;
+    color:#7F7F7F;
+    font-weight: bold;
+    padding: 3px;
+    margin: 3px;
+  }
+
+}

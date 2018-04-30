@@ -1,0 +1,30 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <button ion-button menuToggle start>
+      <ion-icon name="md-menu"></ion-icon>
+    </button>
+    <ion-title text-capitalize><ion-icon name="cube" icon-left> 올바른 솔루션</ion-icon></ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-item>
+    <!--<ion-label stacked>Channel ID</ion-label>
+    <ion-input type="text" [(ngModel)]="channelId"></ion-input>-->
+    <ion-label color="primary">올바른자세 교정동작</ion-label>
+  </ion-item>
+  <!--<button full ion-button (click)="searchPlaylists()" [disabled]="channelId === ''" color="danger">Search Playlists</button>-->
+
+  <ion-list no-padding>
+    <button ion-item *ngFor="let list of playlists | async" (click)="openPlaylist(list.id)">
+      <ion-thumbnail item-start>
+        <img [src]="list.snippet.thumbnails.standard.url">
+      </ion-thumbnail>
+      <h2>{{ list.snippet.title }}</h2>
+      <p>{{ list.snippet.publishedAt | date:'short' }}</p>
+    </button>
+  </ion-list>
+</ion-content>

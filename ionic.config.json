@@ -1,8 +1,9 @@
 {
-  "name": "runningdna",
-  "app_id": "",
+  "name": "beaulab",
+  "app_id": "2c58608e",
   "type": "ionic-angular",
   "integrations": {
     "cordova": {}
-  }
+  },
+  "dev_push": true
 }

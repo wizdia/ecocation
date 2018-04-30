@@ -1,16 +1,18 @@
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
-import { MapModalPage } from './map-modal';
+import { Pqcheckup } from './Pqcheckup';
+
 
 @NgModule({
   declarations: [
-    MapModalPage,
+    Pqcheckup,
   ],
   imports: [
-    IonicPageModule.forChild(MapModalPage),
+    IonicPageModule.forChild(Pqcheckup),
   ],
   exports: [
-    MapModalPage
+    Pqcheckup
   ]
 })
-export class MapModalPageModule {}
+export class PqcheckupPageModule {}
+

@@ -1,14 +1,14 @@
 webpackJsonp([6],{
 
-/***/ 264:
+/***/ 278:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(98);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__map_modal__ = __webpack_require__(276);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MapModalPageModule", function() { return MapModalPageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(99);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__register__ = __webpack_require__(467);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RegisterPageModule", function() { return RegisterPageModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,37 +18,36 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var MapModalPageModule = (function () {
-    function MapModalPageModule() {
+var RegisterPageModule = (function () {
+    function RegisterPageModule() {
     }
-    return MapModalPageModule;
+    return RegisterPageModule;
 }());
-MapModalPageModule = __decorate([
+RegisterPageModule = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["a" /* NgModule */])({
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_2__map_modal__["a" /* MapModalPage */],
+            __WEBPACK_IMPORTED_MODULE_2__register__["a" /* Register */],
         ],
         imports: [
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__map_modal__["a" /* MapModalPage */]),
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__register__["a" /* Register */]),
         ],
         exports: [
-            __WEBPACK_IMPORTED_MODULE_2__map_modal__["a" /* MapModalPage */]
+            __WEBPACK_IMPORTED_MODULE_2__register__["a" /* Register */]
         ]
     })
-], MapModalPageModule);
+], RegisterPageModule);
 
-//# sourceMappingURL=map-modal.module.js.map
+//# sourceMappingURL=register.module.js.map
 
 /***/ }),
 
-/***/ 276:
+/***/ 467:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(98);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_geolocation__ = __webpack_require__(194);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MapModalPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(99);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Register; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -60,94 +59,26 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
-
-var MapModalPage = (function () {
-    function MapModalPage(navCtrl, navParams, viewCtrl, geolocation, ngZOne) {
+var Register = (function () {
+    function Register(navCtrl, navParams) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
-        this.viewCtrl = viewCtrl;
-        this.geolocation = geolocation;
-        this.ngZOne = ngZOne;
-        this.markers = [{ id: 1, lat: 37.593003, lng: 127.070910 }];
-        this.ionViewLoaded();
     }
-    MapModalPage.prototype.ionViewLoaded = function () {
-        this.loadMap();
+    //goTo function
+    Register.prototype.goTo = function (page) {
+        this.navCtrl.push(page);
     };
-    MapModalPage.prototype.loadMap = function () {
-        var _this = this;
-        this.markerBounds = new google.maps.LatLngBounds();
-        this.geolocation.getCurrentPosition().then(function (position) {
-            var latLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-            var mapOptions = {
-                center: latLng,
-                mapTypeId: google.maps.MapTypeId.ROADMAP
-            };
-            _this.map = new google.maps.Map(_this.mapElement.nativeElement, mapOptions);
-            _this.addMarker(); // current
-            _this.addMarkersToMap();
-        }, function (err) {
-            console.log(err);
-        });
-    };
-    MapModalPage.prototype.addMarker = function () {
-        var icon = {
-            url: "assets/img/pin.png",
-            scaledSize: new google.maps.Size(25, 25),
-            origin: new google.maps.Point(0, 0),
-            anchor: new google.maps.Point(0, 0) // anchor
-        };
-        var markerdata = {
-            map: this.map,
-            animation: google.maps.Animation.DROP,
-            position: this.map.getCenter(),
-            icon: icon
-        };
-        var marker = new google.maps.Marker(markerdata);
-        marker.setMap(this.map);
-        this.markerBounds.extend(this.map.getCenter());
-    };
-    MapModalPage.prototype.addMarkersToMap = function () {
-        for (var _i = 0, _a = this.markers; _i < _a.length; _i++) {
-            var item = _a[_i];
-            var icon = {
-                url: "assets/img/marker.png",
-                scaledSize: new google.maps.Size(20, 20),
-                origin: new google.maps.Point(0, 0),
-                anchor: new google.maps.Point(0, 0) // anchor
-            };
-            var position = new google.maps.LatLng(item.lat, item.lng);
-            var markerdata = { position: position, icon: icon, title: item.id.toString() };
-            var marker = new google.maps.Marker(markerdata);
-            marker.setMap(this.map);
-            this.markerBounds.extend(position);
-            this.addInfoWindowToMarker(marker);
-        }
-        this.map.fitBounds(this.markerBounds);
-        this.map.setCenter(this.markerBounds.getCenter());
-    };
-    MapModalPage.prototype.addInfoWindowToMarker = function (marker) {
-        marker.addListener('click', function () {
-        });
-    };
-    MapModalPage.prototype.close = function () {
-        this.viewCtrl.dismiss(); // This works fine
-    };
-    return MapModalPage;
+    return Register;
 }());
-__decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* ViewChild */])('map'),
-    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_0__angular_core__["s" /* ElementRef */])
-], MapModalPage.prototype, "mapElement", void 0);
-MapModalPage = __decorate([
+Register = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPage */])(),
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
-        selector: 'page-map-modal',template:/*ion-inline-start:"D:\dev\ionicProjects\runningDNA\runningdna\src\pages\map-modal\map-modal.html"*/'<ion-content class="map-content">\n  <div #map id="map" data-tap-disabled="true"></div>\n  <ion-icon md="md-close" text-center color="primary" class="close-icon" (click)="close()" large></ion-icon>\n</ion-content>\n<ion-footer class="map-footer" color="primary">\n    <ion-grid color="primary">\n      <ion-row>\n        <ion-col padding-left padding-bottom width-75>\n          <h4>박러너</h4>\n          <p no-margin>누적거리 9.8 Km</p>\n        </ion-col>\n        <ion-col width-25 text-center>\n          <ion-icon md="ios-pulse" large></ion-icon>\n          <p no-margin>100m 13 초</p>\n        </ion-col>\n      </ion-row>\n    </ion-grid>\n</ion-footer>\n'/*ion-inline-end:"D:\dev\ionicProjects\runningDNA\runningdna\src\pages\map-modal\map-modal.html"*/,
+        selector: 'page-register',template:/*ion-inline-start:"D:\dev\ionicProjects\whatsoap\whatsoap\src\pages\register\register.html"*/'<ion-header class="form-header">\n  <ion-navbar color="primary"></ion-navbar>\n</ion-header>\n\n<ion-content class="form-content" padding>\n  <div class="Loginpage">\n      <div class="formContainer">\n        <form  class="app-form" text-center>\n          <ion-list>\n            <div class="user-name">\n                 <ion-item no-padding no-lines>\n                  <ion-label floating>성</ion-label>\n                  <ion-input type="text"></ion-input>\n                 </ion-item>\n\n                 <ion-item no-padding no-lines>\n                   <ion-label floating>이름</ion-label>\n                   <ion-input type="text"></ion-input>\n                 </ion-item>\n             </div>\n            <ion-item no-padding no-lines>\n              <ion-label floating>이메일</ion-label>\n              <ion-input type="email"></ion-input>\n            </ion-item>\n            <ion-item no-padding no-lines>\n              <ion-label floating>비밀번호</ion-label>\n              <ion-input type="password"></ion-input>\n            </ion-item>\n          </ion-list>\n          <button ion-button block strong text-uppercase color="grayColor" (click)="goTo(\'Home\')">계정 만들기</button>\n        </form>\n        <div class="loginFooter">\n          <div class="option-sign" text-center>\n            <p>간편 로그인</p>\n            <ion-img style="width: 70px; height: 70px;" src="../../assets/icon/facebook.png"></ion-img>\n            <ion-img style="width: 70px; height: 70px;" src="../../assets/icon/kakaotalk.png"></ion-img>\n            <ion-img style="width: 70px; height: 70px;" src="../../assets/icon/naver.png"></ion-img>\n          </div>\n        </div>\n      </div>\n  </div>\n</ion-content>\n'/*ion-inline-end:"D:\dev\ionicProjects\whatsoap\whatsoap\src\pages\register\register.html"*/,
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* ViewController */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_geolocation__["a" /* Geolocation */], __WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* NgZone */]])
-], MapModalPage);
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
+], Register);
 
-//# sourceMappingURL=map-modal.js.map
+//# sourceMappingURL=register.js.map
 
 /***/ })
 

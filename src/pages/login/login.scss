@@ -1,17 +1,39 @@
+.bigButton-100{
+  width: 80%;
+}
+.option-sign{
+  color: #403f3f;
+  margin-top: 30px;
+  p{
+    color: #403f3f;
+    margin-bottom: 10px;
+  }
+  ion-grid{
+    width: 160px;
+    margin: 0 auto;
+    color: white;
+    font-size: 25px;
+  }
+}
+
 .app-title{
   text-align: center;
-  color: white;
-  font-size: 10rem;
+  color: #403f3f;
+  font-size: x-large;
 }
 .form-content{
-    background-color: color($colors , primary);
+  background-color: #efefef;
     .scroll-content{
         margin-bottom: 0px !important;
         padding: 0px !important;
     }
     p{
         font-weight: normal !important;
-        color: color($colors , light);
+        color: #403f3f;
+    }
+    a{
+        text-decoration: underline;
+        color: #403f3f;
     }
 }
 
@@ -22,6 +44,12 @@
     .formContainer{
         padding: 22px;
         width: 100%;
+        //align-items: center;
+      .cent-img{
+        padding-top: 20px;
+        margin: auto;
+        display: block;
+      }
     }
 }
 
@@ -30,24 +58,29 @@
         padding: 10px;
         margin-bottom: 40px;
         .item-md{
-            background: none;
-            border-bottom: 1px solid rgba(color($colors , light) , .6) !important;
+          background: none;
+          //border-bottom: 1px solid rgba(color($colors , light) , .6) !important;
+          border-bottom: 1px solid rgba(#403f3f , .6) !important;
         }
         ion-label{
-            color: rgba(color($colors , light) , .6);
-            font-size: 1.55rem;
+          color: rgba(#403f3f , .6);
+          font-size: 1.2rem;
         }
     }
     .text-input{
-        color: white;
+        color: #403f3f;
     }
     .label-md[floating]{
-        color: rgba(color($colors , light) , .6);
+
+      color: rgba(#403f3f , .6);
     }
     .button-md{
-        font-size: 2rem;
-        color: color($colors , light);
-        background-color: color($colors , secondary);
-        font-weight: normal;
+      //font-size: 2.5rem;
+      font-size: medium;
+      //color: color($colors , light);
+      color: color($colors , light);
+      //background-color: color($colors , primary);
+      background-color: #a4d4ea;
+      font-weight: normal;
     }
 }

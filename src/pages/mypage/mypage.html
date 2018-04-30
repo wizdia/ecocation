@@ -1,0 +1,54 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <button ion-button menuToggle start>
+      <ion-icon name="md-menu"></ion-icon>
+    </button>
+    <ion-title text-capitalize><ion-icon name="create" icon-left> 내 기록확인</ion-icon></ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-item>
+    <ion-label color="primary">내 자세지수(PQ)</ion-label>
+  </ion-item>
+  <ion-card>
+    <ion-card-header>
+      종합 자세지수(PQ)
+    </ion-card-header>
+    <ion-card-content>
+      <canvas #doughnutCanvasPQ></canvas>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      진척도
+    </ion-card-header>
+    <ion-card-content>
+      <canvas #lineCanvasPQ></canvas>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-item>
+    <ion-label color="primary">내 환경지수(EQ)</ion-label>
+  </ion-item>
+  <ion-card>
+    <ion-card-header>
+      종합 환경지수(EQ)
+    </ion-card-header>
+    <ion-card-content>
+      <canvas #doughnutCanvasEQ></canvas>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      진척도
+    </ion-card-header>
+    <ion-card-content>
+      <canvas #lineCanvasEQ></canvas>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

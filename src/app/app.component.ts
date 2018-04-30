@@ -11,6 +11,7 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   rootPage: string = 'Login';
+  //rootPage: string = 'login-page';
 
   pages: Array<any>;
 
@@ -19,9 +20,11 @@ export class MyApp {
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: '러닝 맵', component: 'Home' , icon: 'ios-map' },
-      { title: '저장된 친구', component: 'Favorite' , icon: 'md-heart' },
-      { title: '내 계정', component: 'Profile' , icon: 'md-person' },
+      { title: 'My레시피', component: 'Mypage' , icon: 'contact' },
+      { title: '내게시글', component: 'Home' , icon: 'create' },
+      { title: '커뮤니티', component: 'Eqcheckup' , icon: 'chatbubbles' },
+      { title: '공지사항', component: 'Contents' , icon: 'cube' },
+      { title: '헬프데스크', component: 'Setting' , icon: 'help-circle' },
       { title: '설정', component: 'Setting' , icon: 'md-settings' }
     ];
 

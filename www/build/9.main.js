@@ -1,14 +1,14 @@
 webpackJsonp([9],{
 
-/***/ 260:
+/***/ 274:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(98);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__details__ = __webpack_require__(272);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DetailsModule", function() { return DetailsModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(99);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home__ = __webpack_require__(463);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HomePageModule", function() { return HomePageModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,36 +18,36 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var DetailsModule = (function () {
-    function DetailsModule() {
+var HomePageModule = (function () {
+    function HomePageModule() {
     }
-    return DetailsModule;
+    return HomePageModule;
 }());
-DetailsModule = __decorate([
+HomePageModule = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["a" /* NgModule */])({
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_2__details__["a" /* Details */],
+            __WEBPACK_IMPORTED_MODULE_2__home__["a" /* Home */],
         ],
         imports: [
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__details__["a" /* Details */]),
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__home__["a" /* Home */]),
         ],
         exports: [
-            __WEBPACK_IMPORTED_MODULE_2__details__["a" /* Details */]
+            __WEBPACK_IMPORTED_MODULE_2__home__["a" /* Home */]
         ]
     })
-], DetailsModule);
+], HomePageModule);
 
-//# sourceMappingURL=details.module.js.map
+//# sourceMappingURL=home.module.js.map
 
 /***/ }),
 
-/***/ 272:
+/***/ 463:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(98);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Details; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(99);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Home; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -59,37 +59,37 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
-var Details = (function () {
-    function Details(navCtrl, navParams, modalCtrl) {
+var Home = (function () {
+    function Home(platform, navCtrl, navParams, viewCtrl, modalCtrl) {
+        var _this = this;
+        this.platform = platform;
         this.navCtrl = navCtrl;
         this.navParams = navParams;
+        this.viewCtrl = viewCtrl;
         this.modalCtrl = modalCtrl;
-        this.save = false;
+        this.items = {};
+        this.showbtn = true;
+        this.platform.ready().then(function () {
+            _this.toggleshowbtn();
+        });
     }
-    Details.prototype.saveDoctor = function () {
-        this.save = !this.save;
+    Home.prototype.toggleshowbtn = function () {
     };
-    // Map modal
-    Details.prototype.presentMapModal = function () {
-        var mapModal = this.modalCtrl.create('MapModalPage', { userId: 8675309 });
-        mapModal.present();
-    };
-    // rate modal
-    Details.prototype.presentRateModal = function () {
-        var rateModal = this.modalCtrl.create('RateModalPage', { userId: 8675309 });
-        rateModal.present();
-    };
-    return Details;
+    //goTo function
+    Home.prototype.goTo = function (page) {
+        this.navCtrl.push(page);
+    }; //goTo
+    return Home;
 }());
-Details = __decorate([
+Home = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPage */])(),
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
-        selector: 'page-details',template:/*ion-inline-start:"D:\dev\ionicProjects\runningDNA\runningdna\src\pages\details\details.html"*/'<ion-header>\n\n  <ion-navbar color="primary">\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title text-capitalize>프로필상세</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content>\n\n  <div class="detail-head">\n    <img src="assets/img/det-img.png" />\n    <div class="more-info">\n      <ion-fab left>\n        <button (click)="saveDoctor()" class="add-btn" ion-fab>\n          <ion-icon name="add" *ngIf="!save"></ion-icon>\n          <ion-icon name="md-checkmark" *ngIf="save"></ion-icon>\n        </button>\n      </ion-fab>\n      <img src="assets/img/img1.png" />\n      <ion-fab right>\n        <button (click)="presentMapModal()" color="secondary" ion-fab><ion-icon name="md-map"></ion-icon></button>\n      </ion-fab>\n    </div>\n  </div>\n\n  <div class="detail" text-center padding>\n    <h4>박러너</h4>\n    <p class="det-info">러닝크루지망자</p>\n    <p class="det-info">무작정 달리는게 좋은 사람입니다.</p>\n    <span class="phone">\n      <ion-icon name="md-call"></ion-icon>\n      010-111-1111\n    </span>\n\n    <div class="rate" padding text-left>\n      <h4>쪽지</h4>\n      <ion-item no-padding no-lines>\n        <ion-avatar item-start>\n          <img src="assets/img/user-img.png">\n        </ion-avatar>\n        <h2>나 <span>3 days ago</span></h2>\n        <p>오늘 저녁 치맥 콜?</p>\n      </ion-item>\n      <button (click)="presentRateModal()" ion-button block text-capitalize color="primary">쪽지쓰기</button>\n    </div>\n  </div>\n\n</ion-content>\n'/*ion-inline-end:"D:\dev\ionicProjects\runningDNA\runningdna\src\pages\details\details.html"*/,
+        selector: 'page-home',template:/*ion-inline-start:"D:\dev\ionicProjects\whatsoap\whatsoap\src\pages\home\home.html"*/'<ion-header>\n  <ion-navbar color="white" hideBackButton="true">\n    <button ion-button menuToggle>\n      <ion-icon name="menu" style="color: #403f3f" ></ion-icon>\n    </button>\n    <ion-title text-capitalize> 시크릿레시피 </ion-title>\n  </ion-navbar>\n</ion-header>\n<!--<ion-list [virtualScroll]>\n  <ion-item >\n    &lt;!&ndash;<ion-avatar>\n      <ion-img ></ion-img>\n    </ion-avatar>&ndash;&gt;\n  </ion-item>\n</ion-list>-->\n<ion-content class="grid-full"  style="background-size: 100%;">\n  <ion-row no-margin no-padding style="height: 70%;">\n    <ion-col class="cell-1" (click)="goTo(\'CosmeRecipes\')" >\n      <!--<ion-card (click)="goTo(\'CosmeRecipes\')">-->\n        <img class="full-image" src="../../assets/img/makecosme.png"/>\n        <div class="card-title">화장품 연구실</div>\n        <div class="card-subtitle">레시피 만들러 가기</div>\n      <!--</ion-card>-->\n    </ion-col>\n    <ion-col class="cell-2" (click)="goTo(\'CosmeRecipes\')">\n      <!--<ion-card>-->\n        <img class="full-image" src="../../assets/img/makesoap.png"/>\n        <div class="card-title">수제비누 공방</div>\n        <div class="card-subtitle">비누 만들러 가기</div>\n      <!--</ion-card>-->\n    </ion-col>\n    <ion-col class="cell-3" (click)="goTo(\'CosmeRecipes\')">\n      <!--<ion-card>-->\n        <img class="full-image" src="../../assets/img/makesoap.png"/>\n        <div class="card-title">화장품이야기</div>\n        <div class="card-subtitle">커뮤니티 가기</div>\n      <!--</ion-card>-->\n    </ion-col>\n    <ion-col class="cell-4" (click)="goTo(\'CosmeRecipes\')" >\n      <!--<ion-card>-->\n        <img class="full-image" src="../../assets/img/makesoap.png"/>\n        <div class="card-title">나만의 레시피</div>\n        <div class="card-subtitle">My레시피 가기</div>\n      <!--</ion-card>-->\n    </ion-col>\n  </ion-row>\n  <ion-row nowrap style="background-color: #EFEFEF; width:100%; height:30%;">\n      <div text-center no-margin no-padding style="background-color: #EFEFEF; width:100%; ">\n        <h6>어플이용이 어렵나요?</h6>\n        <a>매뉴얼/QnA보러가기</a>\n        <div margin-top>\n          <ion-img width="100" height="50" src="../assets/icon/top_logo5.jpg" style="align-items: center"></ion-img>\n        </div>\n      </div>\n  </ion-row>\n</ion-content>\n\n\n<!--\n<ion-content class="grid-full" no-padding no-margin>\n\n  <ion-grid no-padding no-margin>\n    <ion-row >\n      <ion-col col-6 no-padding  no-margin>\n        <ion-card (click)="goTo(\'CosmeRecipes\')">\n        <img src="../../assets/img/makecosme.png"/>\n        <div class="card-title">화장품 연구실</div>\n        <div class="card-subtitle">레시피 만들러 가기</div>\n      </ion-card>\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col col-6 no-padding>\n        <ion-card>\n          <img src="../../assets/img/makesoap.png"/>\n          <div class="card-title">수제비누 공방</div>\n          <div class="card-subtitle">비누 만들러 가기</div>\n        </ion-card>\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col >\n        <ion-card>\n          <img src="../../assets/img/makesoap.png"/>\n          <div class="card-title">화장품이야기</div>\n          <div class="card-subtitle">커뮤니티 가기</div>\n        </ion-card>\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col >\n        <ion-card>\n          <img src="../../assets/img/makesoap.png"/>\n          <div class="card-title">나만의 레시피</div>\n          <div class="card-subtitle">My레시피 가기</div>\n        </ion-card>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n\n\n</ion-content>\n-->\n\n\n'/*ion-inline-end:"D:\dev\ionicProjects\whatsoap\whatsoap\src\pages\home\home.html"*/,
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* ModalController */]])
-], Details);
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* Platform */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* ViewController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* ModalController */]])
+], Home);
 
-//# sourceMappingURL=details.js.map
+//# sourceMappingURL=home.js.map
 
 /***/ })
 

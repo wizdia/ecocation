@@ -1,0 +1,62 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <button ion-button menuToggle start>
+      <ion-icon name="md-menu"></ion-icon>
+    </button>
+    <ion-title text-capitalize><ion-icon name="clipboard" icon-left> 환경점수(EQ)측정하기</ion-icon></ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content class="card-background-page">
+  <ion-grid>
+    <ion-row>
+      <ion-col col-12>
+        <ion-card (click)="goTo('Eqchecklist')">
+          <img src="../../assets/img/ergonomic-office-half.png"/>
+          <div class="card-title">사무환경체크</div>
+          <div class="card-subtitle">사무환경 체크문진표</div>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-12>
+        <ion-card>
+          <img src="../../assets/img/ergonomic-work-half.png"/>
+          <div class="card-title">노동환경체크</div>
+          <div class="card-subtitle">노동환경 체크문진표</div>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-12>
+        <ion-card>
+          <img src="../../assets/img/ergonomic-study-half.png"/>
+          <div class="card-title">학습환경체크</div>
+          <div class="card-subtitle">학습환경 체크문진표</div>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-12>
+        <ion-card>
+          <img src="../../assets/img/ergonomic-house-half.png"/>
+          <div class="card-title">가사환경체크</div>
+          <div class="card-subtitle">가사환경 체크문진표</div>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-12>
+        <ion-card>
+          <img src="../../assets/img/ergonomic-life-half.png"/>
+          <div class="card-title">생활환경체크</div>
+          <div class="card-subtitle">생활환경 체크문진표</div>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+</ion-content>

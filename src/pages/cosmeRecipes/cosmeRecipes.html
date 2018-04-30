@@ -1,0 +1,158 @@
+<ion-header>
+
+  <ion-navbar color="white" hideBackButton="true">
+    <!--<button ion-button block (click)="goTo('Home')" >-->
+  <ion-row>
+    <ion-col col-1>
+      <button ion-button clear block>
+        <ion-icon  name="arrow-back" style="color: #403f3f" (click)="goTo('Home')"></ion-icon>
+      </button>
+    </ion-col>
+    <ion-col col-9>
+      <ion-searchbar mode="ios" align-items-end="backbutton" placeholder="성분검색"></ion-searchbar>
+    </ion-col>
+    <ion-col col-2>
+      <button ion-button clear block align-items-center style="color: #403f3f">
+        <ion-icon  name="ribbon"  (click)="goTo('Home')">
+          <label style="font-size: small; ">추천</label>
+        </ion-icon>
+      </button>
+    </ion-col>
+  </ion-row>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-row >
+    <ion-col class="colored-bar">
+      <button col-1 ion-button clear block align-items-stretch>
+        <ion-icon name="arrow-dropdown" ></ion-icon>
+      </button>
+      <h3 col-11>피부타입 및 효능</h3>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-item *ngIf="true" >
+      <ion-badge item-start style="width: 15% ;background-color: #95E0DB">{{ trainvalue }}</ion-badge>
+      <ion-range pin="true" snaps="true" min="1" max="5" step="1" color="primary" [(ngModel)]="train" (ngModelChange)="onChangeTrain($event)">
+        <ion-label class="content-text" range-left>건성</ion-label>
+        <ion-label class="content-text" range-right>지성</ion-label>
+      </ion-range>
+    </ion-item>
+  </ion-row>
+  <ion-row >
+    <ion-col class="colored-bar">
+      <button col-1 ion-button clear block align-items-stretch>
+        <ion-icon name="arrow-dropright" ></ion-icon>
+      </button>
+      <h3 col-12>기능성</h3>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col col-2 *ngFor="let item of funcItems;">
+      <ion-label ion-button class="offbutton"  >{{item}} </ion-label>
+    </ion-col>
+  </ion-row>
+  <ion-row >
+    <ion-col class="colored-bar">
+      <button col-1 ion-button clear block align-items-stretch>
+        <ion-icon name="arrow-dropright" ></ion-icon>
+      </button>
+      <h3 col-11>효능</h3>
+    </ion-col>
+  </ion-row>
+  <ion-scroll scrollX="true" style="width:100vw; height:80px" >
+    <ion-row nowrap >
+      <ion-col nowrap *ngFor="let item of effectItems;">
+        <ion-label ion-button class="onbutton" (click)="buttononoff('acne')" >{{item.value}}</ion-label>
+      </ion-col>
+    </ion-row>
+  </ion-scroll>
+      <!--<ion-scroll width="500px; height: 100px" direction="xy">-->
+       <!-- <ion-label id="acne" ion-button class="onbutton" (click)="buttononoff('acne')" >여드름/트러블</ion-label>
+        <ion-label id="atopy" ion-button class="onbutton" (click)="buttononoff('atopy')" >아토피</ion-label>
+        <ion-label id="flushing" ion-button class="offbutton" (click)="buttononoff('flushing')" >모세혈관확장</ion-label>
+        <ion-label id="pores" ion-button class="offbutton" (click)="buttononoff('pores')" >모공축소</ion-label>
+        <ion-label id="aging" ion-button class="offbutton" (click)="buttononoff('aging')" >노화방지</ion-label>
+        <ion-label id="rejuvenation" ion-button class="offbutton" (click)="buttononoff('rejuvenation')" >피부재생</ion-label>
+        <ion-label id="itchiness" ion-button class="offbutton" (click)="buttononoff('itchiness')" >가려움/진정</ion-label>
+        <ion-label id="sensitiveskin" ion-button class="offbutton" (click)="buttononoff('sensitiveskin')" >민감성피부</ion-label>-->
+      <!--</ion-scroll>-->
+  <ion-row >
+    <ion-col class="colored-bar">
+      <button col-1 ion-button clear block align-items-stretch>
+        <ion-icon name="arrow-dropright" ></ion-icon>
+      </button>
+      <h3 col-11>레시피</h3>
+    </ion-col>
+  </ion-row>
+  <ion-row style="display: flex;">
+    <ion-col col-8>
+      <ion-label class="title-text" text-center >정제수</ion-label>
+    </ion-col>
+    <ion-col col-3>
+      <ion-label class="content-text" text-right>{{water}}g</ion-label>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col col-8>
+      <ion-label class="title-text" text-center >유화제</ion-label>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col col-8>
+      <ion-label class="content-text"  text-center>올리브유화왁스</ion-label>
+    </ion-col>
+    <ion-col col-3>
+      <ion-label class="content-text" text-right>{{oliverewax}}g</ion-label>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col col-8>
+      <ion-label class="content-text" text-center >GMS</ion-label>
+    </ion-col>
+    <ion-col col-3>
+      <ion-label class="content-text" text-right>{{gms}}g</ion-label>
+    </ion-col>
+  </ion-row>
+  <ion-row style="display: flex;">
+    <ion-col col-8>
+      <ion-label class="title-text" text-center >식물성오일</ion-label>
+    </ion-col>
+    <ion-col col-4>
+      <ion-label class="content-text" >투입량(g)</ion-label>
+    </ion-col>
+  </ion-row>
+  <ion-row >
+    <ion-col col-6 nowrap>
+      <ion-select nowrap text-center [(ngModel)]="vegioilSelected1">
+        <ion-option  *ngFor="let oil of vegioils" >{{oil.value}}</ion-option>
+      </ion-select>
+    </ion-col>
+    <ion-col col-6 nowrap>
+      <ion-label class="content-text" text-center >g</ion-label>
+    </ion-col>
+  </ion-row>
+
+</ion-content>
+<ion-footer>
+  <ion-item>
+    <ion-textarea rows="5" maxLength="500"  placeholder="메모를 입력해주세요"></ion-textarea>
+  </ion-item>
+  <ion-toolbar no-border align-self-end>
+    <ion-row>
+      <ion-col col-8>
+      </ion-col>
+      <ion-col col-4>
+        <button ion-button color="light" >
+          <label style="font-size: small;">저장</label>
+        </button>
+        <button ion-button color="primary" >
+          <ion-icon   name="md-share" (click)="goTo('Home')">
+          </ion-icon>
+        </button>
+      </ion-col>
+    </ion-row>
+
+  </ion-toolbar>
+</ion-footer>
+

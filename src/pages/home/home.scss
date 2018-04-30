@@ -13,11 +13,6 @@ page-home{
     }
 }
 
-#map {
-    width: 100%;
-    height: 100%;
-    position: relative;
-}
 
 /**horizontal scroll**/
 .home-detail{
@@ -37,81 +32,133 @@ page-home{
     }
 }
 
-/**Scrolling list**/
-.app-card{
-    width: 160px;
-    margin: 0 10px 0 0;
-    display: inline-block;
-    background-color: color($colors,primary);
-    img{
-        width: 45px;
-        height: 45px;
-        margin-bottom: 10px;
-        border-radius: 50%;
-        object-fit: cover;
-        -o-object-fit: cover;
-    }
+.full-image {
+  width: 100%;
+  height: 100%;
 }
 
-.card-det{
-    h4 , p{
-        @extend %overflow;
-        color: color($colors,light);
-    }
-    p{
-        font-size: 1.1rem;
-    }
-    .item-md{
-        background-color: transparent;
-        ion-icon{
-            min-height: 1.5rem;
-            font-size: 1.5rem;
-            margin-right: 0 !important;
-            color: color($colors,secondary);
-        }
-        ion-icon[item-start]{
-            + .item-inner{
-                margin-left: 0;
-            }
-        }
-        ion-label{
-            font-size: 1.1rem;
-            color: color($colors,light);
-            white-space: normal;
-            margin-right: 0 !important;
-            min-height: 27px;
-        }
-    }
-    .button-md{
-        font-weight: normal;
-        font-size: 1.1rem;
-        width: 70px;
-        height: 3rem;
-        background-color: color($colors,secondary);
-    }
-    .col{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        ion-icon{
-            font-size: 1.9rem;
-        }
-    }
+.grid-full ion-row {
+
+  padding: 0px;
+  margin: 0px;
+  flex-wrap: wrap;
 }
-.stars{
-    ion-icon{
-        font-size: 1.3rem;
-        color: color($colors,star);
-    }
-    p{
-        display: inline-block;
-        margin-left: 5px;
-        vertical-align: middle;
-    }
+
+.grid-full ion-col {
+  flex: 0 0 50%;
+  text-align: center;
+  padding: 0.5px 0.5px;
+  border: solid 1px #D2D2D2;
+  background-color: #FFFFFF;
+
 }
+.cell-1 {
+  max-width: 50%;
+}
+.cell-2 {
+  max-width: 50%;
+}
+.cell-3 {
+  max-width: 50%;
+}
+.cell-4 {
+  max-width: 50%;
+}
+.cell-5 {
+  background-color: #EFEFEF;
+  width: 100%;
+}
+
+.card-title {
+  position: absolute;
+  top: 36%;
+  //font-size: 2.0em;
+  font-size: medium;
+  width: 100%;
+  font-weight: bold;
+  color: #fff;
+}
+
+.card-subtitle {
+  font-size: 1.0em;
+  position: absolute;
+  top: 52%;
+  width: 100%;
+  color: #fff;
+}
+.grid-full ion-col:hover {
+  background: rgba(107, 107, 107, 1);
+}
+
+.card-subtitle:hover {
+  font-size: 110%;
+  font-weight: 200;
+}
+
+a{
+  text-decoration: underline;
+  color: #403f3f;
+}
+
+/*.grid-full ion-grid{
+  display: list-item;
+  flex-direction: column;
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+}*/
+
+/*.grid-full ion-row {
+  height: 100%;
+  padding: 0;
+  flex-wrap: wrap;
+}
+
+.grid-full ion-col {
+  //flex: 0 0 50%;
+  max-width: 48%;
+  width: 47%;
+  text-align: center;
+  padding: 3px 3px 0px 0px;
+}*/
+
+
+/*.card-background-page {
+
+  ion-card {
+    position: relative;
+    text-align: center;
+  }
+
+  .card-title {
+    position: absolute;
+    top: 36%;
+    //font-size: 2.0em;
+    font-size: medium;
+    width: 100%;
+    font-weight: bold;
+    color: #fff;
+  }
+
+  .card-subtitle {
+    font-size: 1.0em;
+    position: absolute;
+    top: 52%;
+    width: 100%;
+    color: #fff;
+  }
+  .card-icon {
+    position: absolute;
+    top: 72%;
+    width: 100%;
+    color: #fff;
+  }
+
+}*/
 
 // Main list
-.main-list{
+/*.main-list{
     margin: 10px 0;
     .list-item{
         margin: 10px 15px 0 15px;
@@ -159,27 +206,6 @@ page-home{
             justify-content: flex-start;
         }
     }
-}
+}*/
 
-.activeslide{
-    background-color: color($colors,secondary) !important;
-    .stars{
-        ion-icon{
-            color: color($colors,light);
-        }
-    }
-    .card-det{
-        .item-md{
-            ion-icon{
-                color: color($colors,primary);
-            }
-        }
-        .button-md{
-            background-color: color($colors,primary);
-        }
-    }
-}
 
-.activeLikeColor{
-    color: color($colors,star) !important;
-}

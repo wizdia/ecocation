@@ -1,8 +1,9 @@
 <ion-menu [content]="content">
   <ion-header>
     <ion-toolbar>
-      <img src="assets/img/user-img.png" menuClose (click)="logout('Login')" />
-      <p>itsme@yahoo.com</p>
+      <!--<img src="assets/img/user-img.png" menuClose (click)="logout('Login')" />-->
+      <h3>왓솝뷰랩(BeauLab)</h3>
+      <p>itsme@whatsoap.co.kr</p>
     </ion-toolbar>
   </ion-header>
 
@@ -12,17 +13,27 @@
         <ion-icon name="{{p.icon}}" item-left></ion-icon>
         {{p.title}}
       </ion-item>
-      <div class="social">
-        <ion-item menuClose no-lines text-uppercase no-padding>
-          <i class="app-facebook-1 fb"  item-left></i>
-          쿠폰증정-트위터(Twitter)에 알리기
-        </ion-item>
-        <ion-item menuClose no-lines text-uppercase no-padding>
-          <i class="app-twitter tw" item-left></i>
-          쿠폰증정-페이스북(Facebook)에 알리기
-        </ion-item>
-      </div>
+
     </ion-list>
+    <div class="social">
+      <ion-grid>
+        <ion-row>
+          <ion-col >
+            <ion-item  no-lines text-uppercase no-padding>
+              <ion-icon name="call" item-left></ion-icon>
+              <h3>고객센터</h3>
+            </ion-item>
+          </ion-col>
+          <ion-col>
+            <ion-item  no-lines text-uppercase no-padding>
+              <ion-icon name="logo-twitter" item-left></ion-icon>
+              <h3>왓솝<br>쇼핑몰바로가기</h3>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+    </div>
   </ion-content>
   <ion-footer>
     <ion-buttons class="log-out" end>

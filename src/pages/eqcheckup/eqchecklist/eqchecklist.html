@@ -1,0 +1,62 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <button ion-button menuToggle start>
+      <ion-icon name="md-menu"></ion-icon>
+    </button>
+    <ion-title text-capitalize><ion-icon name="clipboard" icon-left> 체크리스트</ion-icon></ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-item>
+    <ion-label color="primary">사무환경 체크문진표</ion-label>
+  </ion-item>
+
+  <ion-list class="checklist" radio-group [(ngModel)]="officeMonitorEQ">
+    <ion-list-header>
+      <h2>모니터 높이</h2>
+    </ion-list-header>
+    <ion-item>
+      <ion-label>눈높이보다 높다</ion-label>
+      <ion-radio value="high"></ion-radio>
+    </ion-item>
+    <ion-item>
+      <ion-label>눈높이 이다</ion-label>
+      <ion-radio value="normal"></ion-radio>
+    </ion-item>
+    <ion-item>
+      <ion-label>눈높이보다 낮다</ion-label>
+      <ion-radio value="low"></ion-radio>
+    </ion-item>
+  </ion-list>
+  <ion-list class="checklist" radio-group [(ngModel)]="officeChairEQ">
+    <ion-list-header>
+      <h2>의자상태</h2>
+    </ion-list-header>
+    <ion-item>
+      <ion-label>높이조절가능 등받이 팔걸이 존재</ion-label>
+      <ion-radio value="good"></ion-radio>
+    </ion-item>
+    <ion-item>
+      <ion-label>높이조절가능 등받이나 팔걸이 없음</ion-label>
+      <ion-radio value="normal"></ion-radio>
+    </ion-item>
+    <ion-item>
+      <ion-label>높이조절불가 등받이 팔걸이 없음</ion-label>
+      <ion-radio value="low"></ion-radio>
+    </ion-item>
+  </ion-list>
+  <ion-card>
+    <ion-card-header>
+      사무환경지수(EQ)
+    </ion-card-header>
+    <ion-card-content>
+      <canvas #doughnutCanvas></canvas>
+    </ion-card-content>
+  </ion-card>
+
+
+</ion-content>

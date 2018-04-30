@@ -1,0 +1,70 @@
+page-eqcheckup{
+  [menuToggle]{
+    display: inline-block !important;
+  }
+  .card-background-page {
+
+    ion-card {
+      position: relative;
+      text-align: center;
+    }
+
+    .card-title {
+      position: absolute;
+      top: 26%;
+      //font-size: 2.0em;
+      font-size: medium;
+      width: 100%;
+      font-weight: bold;
+      color: #fff;
+    }
+
+    .card-subtitle {
+      //font-size: 1.0em;
+      font-size: small;
+      position: absolute;
+      top: 52%;
+      width: 100%;
+      color: #fff;
+    }
+    .card-icon {
+      position: absolute;
+      top: 72%;
+      width: 100%;
+      color: #fff;
+    }
+
+  }
+}
+
+.toggle-btn{
+  .item-md{
+    background-color: transparent;
+    .item-inner{
+      padding-right: 5px;
+    }
+  }
+}
+
+
+/**horizontal scroll**/
+.home-detail{
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  ion-scroll{
+    white-space: nowrap;
+    min-height: 240px;
+    margin:0  0 0 10px;
+    .scroll-content{
+      padding: 0 !important;
+      .list-item{
+        margin-right:5px;
+      }
+    }
+  }
+}
+
+
+
+

@@ -1,14 +1,14 @@
 webpackJsonp([5],{
 
-/***/ 265:
+/***/ 279:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(98);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__profile__ = __webpack_require__(277);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProfilePageModule", function() { return ProfilePageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(99);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__setting__ = __webpack_require__(468);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SettingModule", function() { return SettingModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,36 +18,37 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var ProfilePageModule = (function () {
-    function ProfilePageModule() {
+var SettingModule = (function () {
+    function SettingModule() {
     }
-    return ProfilePageModule;
+    return SettingModule;
 }());
-ProfilePageModule = __decorate([
+SettingModule = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["a" /* NgModule */])({
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_2__profile__["a" /* Profile */],
+            __WEBPACK_IMPORTED_MODULE_2__setting__["a" /* Setting */],
         ],
         imports: [
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__profile__["a" /* Profile */]),
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__setting__["a" /* Setting */]),
         ],
         exports: [
-            __WEBPACK_IMPORTED_MODULE_2__profile__["a" /* Profile */]
+            __WEBPACK_IMPORTED_MODULE_2__setting__["a" /* Setting */]
         ]
     })
-], ProfilePageModule);
+], SettingModule);
 
-//# sourceMappingURL=profile.module.js.map
+//# sourceMappingURL=setting.module.js.map
 
 /***/ }),
 
-/***/ 277:
+/***/ 468:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(98);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Profile; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(99);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_app_component__ = __webpack_require__(196);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Setting; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -59,26 +60,35 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
-var Profile = (function () {
-    function Profile(navCtrl, navParams) {
+
+var Setting = (function () {
+    function Setting(_myApp, navCtrl, navParams, popoverCtrl) {
+        this._myApp = _myApp;
         this.navCtrl = navCtrl;
         this.navParams = navParams;
-        this.isDisabled = true;
+        this.popoverCtrl = popoverCtrl;
+        this.action = false;
+        this.action = this._myApp.animateVarible;
     }
-    Profile.prototype.changeData = function (input) {
-        this.isDisabled = !this.isDisabled;
+    Setting.prototype.animateApp = function (e) {
+        this._myApp.animateVarible = e.checked;
+        this.action = this._myApp.animateVarible;
     };
-    return Profile;
+    //goTo function
+    Setting.prototype.goTo = function (page) {
+        this.navCtrl.push(page);
+    };
+    return Setting;
 }());
-Profile = __decorate([
+Setting = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPage */])(),
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
-        selector: 'page-profile',template:/*ion-inline-start:"D:\dev\ionicProjects\runningDNA\runningdna\src\pages\profile\profile.html"*/'<ion-header>\n\n  <ion-navbar color="primary">\n    <button ion-button menuToggle start>\n      <ion-icon name="md-menu"></ion-icon>\n    </button>\n    <ion-title text-capitalize>프로필</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content>\n  <ion-card class="profile-card" color="twitter">\n      <img src="assets/img/user-img.png" />\n      <ion-card-content>\n        <h3>나다구</h3>\n        <p>itsme@yahoo.com</p>\n        <ion-fab right top>\n          <button (click)="changeData()" color="secondary" ion-fab>\n            <ion-icon name="md-create"  *ngIf="isDisabled"></ion-icon>\n            <ion-icon name="checkmark" *ngIf="!isDisabled" class="save_btn"></ion-icon>\n          </button>\n        </ion-fab>\n      </ion-card-content>\n\n    </ion-card>\n\n    <ion-list class="profile-form">\n      <ion-item no-padding>\n        <ion-icon name="md-person" color="secondary" item-left small></ion-icon>\n        <ion-input class="name-user" type="text" placeholder="나다구" disabled="{{isDisabled}}"></ion-input>\n      </ion-item>\n\n      <ion-item no-padding>\n        <ion-icon name="ios-mail" color="secondary" item-left small></ion-icon>\n        <ion-input type="email" placeholder="itsme@yahoo.com" disabled="{{isDisabled}}"></ion-input>\n      </ion-item>\n\n      <ion-item no-padding>\n        <ion-icon name="md-lock" color="secondary" item-left small></ion-icon>\n        <ion-input type="password"  placeholder="************" disabled="{{isDisabled}}"></ion-input>\n      </ion-item>\n    </ion-list>\n\n</ion-content>\n'/*ion-inline-end:"D:\dev\ionicProjects\runningDNA\runningdna\src\pages\profile\profile.html"*/,
+        selector: 'page-setting',template:/*ion-inline-start:"D:\dev\ionicProjects\whatsoap\whatsoap\src\pages\setting\setting.html"*/'<ion-header>\n\n  <ion-navbar color="primary">\n    <button ion-button menuToggle start>\n      <ion-icon name="md-menu"></ion-icon>\n    </button>\n    <ion-title text-capitalize>설정</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content padding>\n\n  <ion-item-group class="setting-list" margin-bottom>\n    <ion-item-divider no-padding color="light">계정</ion-item-divider>\n    <ion-item (click)="goTo(\'Profile\')" no-padding>프로필 편집</ion-item>\n    <ion-item (click)="goTo(\'Login\')" no-padding>로그아웃</ion-item>\n  </ion-item-group>\n\n  <ion-item-group class="setting-list" margin-bottom>\n    <ion-item-divider no-padding color="light">설정</ion-item-divider>\n    <ion-item no-padding>\n      <ion-label>위치 서비스</ion-label>\n      <ion-toggle></ion-toggle>\n    </ion-item>\n    <ion-item class="select-setting" no-padding>\n      <ion-label> 쪽지 받기</ion-label>\n      <ion-toggle></ion-toggle>\n    </ion-item>\n    <ion-item no-padding>\n      <ion-label>진동</ion-label>\n      <ion-toggle></ion-toggle>\n    </ion-item>\n  </ion-item-group>\n\n  <ion-item-group class="setting-list" margin-bottom>\n    <ion-item-divider no-padding color="light">음악</ion-item-divider>\n    <ion-item no-padding>\n      <ion-label>\n        랜덤재생\n      </ion-label>\n      <ion-checkbox (ionChange)="animateApp($event)"  checked="{{action}}" item-right></ion-checkbox>\n    </ion-item>\n  </ion-item-group>\n\n</ion-content>\n'/*ion-inline-end:"D:\dev\ionicProjects\whatsoap\whatsoap\src\pages\setting\setting.html"*/
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
-], Profile);
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__app_app_component__["a" /* MyApp */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* PopoverController */]])
+], Setting);
 
-//# sourceMappingURL=profile.js.map
+//# sourceMappingURL=setting.js.map
 
 /***/ })
 

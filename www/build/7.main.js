@@ -1,14 +1,14 @@
 webpackJsonp([7],{
 
-/***/ 263:
+/***/ 277:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(98);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__login__ = __webpack_require__(275);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoginPageModule", function() { return LoginPageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(99);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__profile__ = __webpack_require__(466);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProfilePageModule", function() { return ProfilePageModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,36 +18,36 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var LoginPageModule = (function () {
-    function LoginPageModule() {
+var ProfilePageModule = (function () {
+    function ProfilePageModule() {
     }
-    return LoginPageModule;
+    return ProfilePageModule;
 }());
-LoginPageModule = __decorate([
+ProfilePageModule = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["a" /* NgModule */])({
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_2__login__["a" /* Login */],
+            __WEBPACK_IMPORTED_MODULE_2__profile__["a" /* Profile */],
         ],
         imports: [
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__login__["a" /* Login */]),
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__profile__["a" /* Profile */]),
         ],
         exports: [
-            __WEBPACK_IMPORTED_MODULE_2__login__["a" /* Login */]
+            __WEBPACK_IMPORTED_MODULE_2__profile__["a" /* Profile */]
         ]
     })
-], LoginPageModule);
+], ProfilePageModule);
 
-//# sourceMappingURL=login.module.js.map
+//# sourceMappingURL=profile.module.js.map
 
 /***/ }),
 
-/***/ 275:
+/***/ 466:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(98);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Login; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(99);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Profile; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -59,26 +59,26 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
-var Login = (function () {
-    function Login(navCtrl, navParams) {
+var Profile = (function () {
+    function Profile(navCtrl, navParams) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
+        this.isDisabled = true;
     }
-    //goTo function
-    Login.prototype.goTo = function (page) {
-        this.navCtrl.push(page);
+    Profile.prototype.changeData = function (input) {
+        this.isDisabled = !this.isDisabled;
     };
-    return Login;
+    return Profile;
 }());
-Login = __decorate([
+Profile = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPage */])(),
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
-        selector: 'page-login',template:/*ion-inline-start:"D:\dev\ionicProjects\runningDNA\runningdna\src\pages\login\login.html"*/'\n<ion-content class="form-content" padding>\n  <div class="Loginpage">\n      <div class="formContainer">\n        <ion-label class="app-title"> <ion-icon name="paw"></ion-icon> Running DNA</ion-label>\n        <form  class="app-form" text-center>\n          <ion-list>\n            <ion-item no-padding no-lines>\n              <ion-label floating>이메일(Email)</ion-label>\n              <ion-input type="email"></ion-input>\n            </ion-item>\n            <ion-item no-padding no-lines>\n              <ion-label floating>비밀번호(Password)</ion-label>\n              <ion-input type="password"></ion-input>\n            </ion-item>\n          </ion-list>\n          <button ion-button block strong text-uppercase color="grayColor" (click)="goTo(\'Home\')">로그인(login)</button>\n          <p class="bold" color="light" (click)="goTo(\'Register\')">아직 가입 안하셨다고요? 가입GO~GO~</p>\n        </form>\n\n      </div>\n  </div>\n</ion-content>\n'/*ion-inline-end:"D:\dev\ionicProjects\runningDNA\runningdna\src\pages\login\login.html"*/,
+        selector: 'page-profile',template:/*ion-inline-start:"D:\dev\ionicProjects\whatsoap\whatsoap\src\pages\profile\profile.html"*/'<ion-header>\n\n  <ion-navbar color="primary">\n    <button ion-button menuToggle start>\n      <ion-icon name="md-menu"></ion-icon>\n    </button>\n    <ion-title text-capitalize>프로필</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content>\n  <ion-card class="profile-card" color="twitter">\n      <img src="assets/img/user-img.png" />\n      <ion-card-content>\n        <h3>나다구</h3>\n        <p>itsme@yahoo.com</p>\n        <ion-fab right top>\n          <button (click)="changeData()" color="secondary" ion-fab>\n            <ion-icon name="md-create"  *ngIf="isDisabled"></ion-icon>\n            <ion-icon name="checkmark" *ngIf="!isDisabled" class="save_btn"></ion-icon>\n          </button>\n        </ion-fab>\n      </ion-card-content>\n\n    </ion-card>\n\n    <ion-list class="profile-form">\n      <ion-item no-padding>\n        <ion-icon name="md-person" color="secondary" item-left small></ion-icon>\n        <ion-input class="name-user" type="text" placeholder="나다구" disabled="{{isDisabled}}"></ion-input>\n      </ion-item>\n\n      <ion-item no-padding>\n        <ion-icon name="ios-mail" color="secondary" item-left small></ion-icon>\n        <ion-input type="email" placeholder="itsme@yahoo.com" disabled="{{isDisabled}}"></ion-input>\n      </ion-item>\n\n      <ion-item no-padding>\n        <ion-icon name="md-lock" color="secondary" item-left small></ion-icon>\n        <ion-input type="password"  placeholder="************" disabled="{{isDisabled}}"></ion-input>\n      </ion-item>\n    </ion-list>\n\n</ion-content>\n'/*ion-inline-end:"D:\dev\ionicProjects\whatsoap\whatsoap\src\pages\profile\profile.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
-], Login);
+], Profile);
 
-//# sourceMappingURL=login.js.map
+//# sourceMappingURL=profile.js.map
 
 /***/ })
 
